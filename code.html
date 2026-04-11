@@ -1,0 +1,408 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="ru"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#6e5c00",
+                        "surface-bright": "#f7f9fb",
+                        "inverse-primary": "#b5c4ff",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eceef0",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3a485b",
+                        "on-tertiary-fixed": "#0d1c2e",
+                        "on-primary-fixed": "#00164e",
+                        "on-secondary-fixed-variant": "#544600",
+                        "surface-tint": "#3557bc",
+                        "tertiary": "#1a283a",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "on-secondary-fixed": "#221b00",
+                        "secondary-container": "#fcd400",
+                        "tertiary-container": "#303e51",
+                        "outline-variant": "#c4c5d5",
+                        "on-surface": "#191c1e",
+                        "surface-container-high": "#e6e8ea",
+                        "on-background": "#191c1e",
+                        "tertiary-fixed-dim": "#b9c7df",
+                        "primary": "#002068",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-fixed": "#dce1ff",
+                        "on-surface-variant": "#444653",
+                        "secondary-fixed": "#ffe16d",
+                        "secondary": "#705d00",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e0e3e5",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "on-primary-fixed-variant": "#153ea3",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#9ba9c0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-container": "#8aa4ff",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-fixed-dim": "#e9c400",
+                        "tertiary-fixed": "#d5e3fc",
+                        "background": "#f7f9fb",
+                        "primary-container": "#003399",
+                        "outline": "#747684",
+                        "surface": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; color: #191c1e; }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hero-gradient { background: linear-gradient(135deg, #002068 0%, #003399 100%); }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-[0px_20px_40px_rgba(0,32,104,0.08)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+<div class="text-2xl font-black text-blue-900 tracking-tighter" style="">OFAT.UZ</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-blue-700 border-b-2 border-yellow-400 pb-1 font-manrope font-bold tracking-tight" href="#about" style="">О компании</a>
+<a class="text-slate-600 font-medium hover:text-blue-900 transition-colors duration-300" href="#products" style="">Продукция</a>
+<a class="text-slate-600 font-medium hover:text-blue-900 transition-colors duration-300" href="#why-us" style="">Почему мы</a>
+<a class="text-slate-600 font-medium hover:text-blue-900 transition-colors duration-300" href="#docs" style="">Документы</a>
+<a class="text-slate-600 font-medium hover:text-blue-900 transition-colors duration-300" href="#contacts" style="">Контакты</a>
+</nav>
+<button class="bg-primary-container text-white px-6 py-3 rounded-lg font-bold hover:translate-y-[-2px] transition-all duration-300 active:scale-95" style="">
+                Запросить прайс-лист
+            </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative overflow-hidden hero-gradient py-24 lg:py-32">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 mix-blend-overlay" data-alt="Modern industrial warehouse interior with steel racks and blue ambient lighting, high precision logistics facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY1P-JqFti7PfDtwORHl3JFDIL5HahaEKNPqXYxMCR7CdFZaSGExbRuNQqdvyJfW_pueDM0-auRkjosXRgcV64P6RW1CymTd-v1yb9JW0QkWyuRJeBKS6kFY0iOUWFILL-ZhP3oP2NhiD3GPXU9boVhQULEi_30nNzAQB8bFd2qxgUNrggaZxfwQ51L1p8dhT90UpSgbIR0GDsMs2UujL4rP73K3KkcpUo7HJ1vKtaSn0MEIvZv4XgrHZl-sKXgpZIUkkpN2ZfHL4" style="">
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight" style="">
+                    Официальный импортёр и оптовый поставщик <span class="text-secondary-container" style="">WD40</span> в Узбекистане
+                </h1>
+<p class="text-xl text-blue-100 font-body leading-relaxed max-w-xl" style="">
+                    Поставляем оригинальную продукцию WD-40 для промышленности, автосервиса и розничных сетей с полной таможенной очисткой.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg transition-all active:scale-95" style="">
+                        Запросить прайс-лист
+                    </button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition-all" style="">
+                        Связаться в WhatsApp
+                    </button>
+</div>
+</div>
+<div class="hidden lg:grid grid-cols-1 gap-6">
+<!-- Trust Badges -->
+<div class="bg-white/10 backdrop-blur-xl p-6 rounded-xl border border-white/10 flex items-center gap-6">
+<span class="material-symbols-outlined text-secondary-container text-4xl" data-icon="verified" style="">verified</span>
+<div>
+<h3 class="text-white font-bold text-lg" style="">Только оригинальная продукция</h3>
+<p class="text-blue-200 text-sm" style="">Прямые контракты и сертификаты</p>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-xl p-6 rounded-xl border border-white/10 flex items-center gap-6">
+<span class="material-symbols-outlined text-secondary-container text-4xl" data-icon="local_shipping" style="">local_shipping</span>
+<div>
+<h3 class="text-white font-bold text-lg" style="">Быстрая доставка</h3>
+<p class="text-blue-200 text-sm" style="">Собственная логистика по всему Узбекистану</p>
+</div>
+</div>
+<div class="bg-white/10 backdrop-blur-xl p-6 rounded-xl border border-white/10 flex items-center gap-6">
+<span class="material-symbols-outlined text-secondary-container text-4xl" data-icon="corporate_fare" style="">corporate_fare</span>
+<div>
+<h3 class="text-white font-bold text-lg" style="">Оптовые поставки B2B</h3>
+<p class="text-blue-200 text-sm" style="">Специальные цены для крупных предприятий</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-24 bg-surface-bright" id="about">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-6">
+<div class="w-16 h-1 bg-secondary-container"></div>
+<h2 class="text-4xl font-extrabold text-primary tracking-tight" style="">О компании OFAT</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed" style="">
+                        OFAT.UZ — надёжный импортёр и поставщик продукции WD-40 в Узбекистане. Мы работаем с корпоративными клиентами, дистрибьюторами, сервисными центрами и промышленными предприятиями, обеспечивая стабильные поставки, прозрачную логистику и оригинальную продукцию.
+                    </p>
+<div class="grid grid-cols-3 gap-8 pt-8">
+<div>
+<p class="text-4xl font-black text-primary" style="">12+</p>
+<p class="text-sm font-label uppercase tracking-widest text-on-surface-variant mt-2" style="">лет опыта</p>
+</div>
+<div>
+<p class="text-4xl font-black text-primary" style="">250+</p>
+<p class="text-sm font-label uppercase tracking-widest text-on-surface-variant mt-2" style="">товаров</p>
+</div>
+<div>
+<p class="text-4xl font-black text-primary" style="">1.5k+</p>
+<p class="text-sm font-label uppercase tracking-widest text-on-surface-variant mt-2" style="">клиентов</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-video rounded-xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Industrial professional in high-vis gear inspecting precision machinery with a technical blueprint nearby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN6acm1t98H5jrTR7-tik9Rjw3X961XarCP-VS0jtLhWjZ0eXmmnOgSaqF0I5L1q54B64kMTje7vnlnO3OPmB4ywD9ofOJdBTm7ghIOsIraSfwcr1w9EHaUpf0DiYD2Y8cETy_nKLuOxE9FP3bviliI6uZ0uH_7UQemCQwyLDtKTnG65e1znMAKWSdPktcGXwgyJZHkksh4y1CKyFD-f8lQI2XdNTtgIpwE8kh5FHbupGtG8zLr2YG6wOmn2ceZzIGve54ryoMcHM" style="">
+</div>
+<div class="absolute -bottom-10 -right-10 hidden lg:block w-64 h-64 bg-primary rounded-xl -z-10 opacity-10"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Products Section -->
+<section class="py-24 bg-surface-container-low" id="products">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-4xl font-extrabold text-primary tracking-tight" style="">Продукция WD-40 в наличии</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto" style="">Полная линейка профессиональных решений для любых технических задач.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:shadow-[0px_20px_40px_rgba(0,32,104,0.08)] group">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container flex items-center justify-center p-8">
+<img class="group-hover:scale-105 transition-transform duration-500" data-alt="Blue and yellow WD-40 multi-use product can on a clean industrial workshop surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvs2hPsW-mluATfn8SnoS4EIETNcwOn1-LVpPdddDo7ufNC2L91CtfkQZRkSNwOGjcGZyNvTjoA-YOsqRhwuRyxZ1aOFS39JKQ2i_3vdqL_1TDrp94w7w8QZ09Kc9wA_F05qiniPnzFncVgwa_pPtwywDIta67fCtBqS1J9PSDfOPdcBup1A9ZMem4GN6thFZNcBsVOkrohGSQKda9JQ_hVrYj_EEfI3XotBRNiSo3Tfke2c3yBYxu7H7LebHRk8l1leZFv-FKYbg" style="">
+</div>
+<h3 class="text-xl font-bold text-primary mb-2" style="">WD-40 Multi-Use</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed" style="">Универсальная смазка и антикоррозийная защита для бытового и промышленного применения.</p>
+<button class="w-full py-3 border-2 border-primary-container text-primary-container font-bold rounded-lg group-hover:bg-primary-container group-hover:text-white transition-all" style="">Запросить КП</button>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:shadow-[0px_20px_40px_rgba(0,32,104,0.08)] group">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container flex items-center justify-center p-8">
+<img class="group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a technician applying silicone spray to a precision mechanical part" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXi_pPszSjnG9ZSB_uka_uSEM6oxK4nMCgtVIwjl5eKVJDnqCr8Co7fxkGiCA7a46yPAh-pcDAcOUP1XxaHiMia9WevDMeL0ikA1WsCunEXBIZ9oYk2gESwP5xFqkeb4O8xFbf954HfWYu6gEUce1dbBxz1GqGlH-6fV7Rwv05gMpcuoYDoV577asMdZI_s2cGUtUNIFrLgpwk49q7xDmhQ29EsCPV4c_hNyAY4jueBt7A6L0JviYbL6H8YCTWQE8JX9DPm9mykGo" style="">
+</div>
+<h3 class="text-xl font-bold text-primary mb-2" style="">WD-40 Specialist Silicone</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed" style="">Силиконовая смазка для механизмов и пластиковых деталей. Водостойкая защита.</p>
+<button class="w-full py-3 border-2 border-primary-container text-primary-container font-bold rounded-lg group-hover:bg-primary-container group-hover:text-white transition-all" style="">Запросить КП</button>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:shadow-[0px_20px_40px_rgba(0,32,104,0.08)] group">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container flex items-center justify-center p-8">
+<img class="group-hover:scale-105 transition-transform duration-500" data-alt="Industrial engine block being cleaned with a powerful degreasing agent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4F5OAGKLeF4or2OeQw-Hsknqw0tEjnc4xPvOC7oS3KJkqodFWw0pp4VFnkd-SagxX_s4my2bW7lGHh4-IvAd-8ElFekx-x_ZXqzXM4Xxf6m94ruR7CsoH5pLwXrfOZnrAhnwvzzdw-2_KJEsJXRCiKyuTII86PO__LD4P0-SW8h_DVE75wdk2pj-nNqo0clcleol8Pm2DX4N8A6IPdCy-kLkX73zqmcOXFvZC5zypC2bUFxRCCqpTlWrYg__FpnS7bAV6bBE2oeE" style="">
+</div>
+<h3 class="text-xl font-bold text-primary mb-2" style="">WD-40 Specialist Degreaser</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed" style="">Очиститель и обезжириватель для технического обслуживания оборудования.</p>
+<button class="w-full py-3 border-2 border-primary-container text-primary-container font-bold rounded-lg group-hover:bg-primary-container group-hover:text-white transition-all" style="">Запросить КП</button>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:shadow-[0px_20px_40px_rgba(0,32,104,0.08)] group">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container flex items-center justify-center p-8">
+<img class="group-hover:scale-105 transition-transform duration-500" data-alt="Rusty industrial bolt being sprayed with a penetrant to loosen it" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGy8D44wmWfnGUpPGBNILTrFjVkcNvh3rK8DgFSXm7NQeFFrRrBYAcjpzG4CGG1M9bU_ce3sZL62SrlWpA3qVckX6VdKKMeNp1Z7gzzWxiyODD4VoiMpJQ4YEfspaHPP7oyoZwU2bA0WZuWLuevZpyE0ITNsJh82Klk3rFogkwEAS3Wj52XhFdc96PM1pIhyYFph_nrigo39wO0655etLEdsnD0eqEM39Suwc6HXNBtKnwvPcM1gXkzUX5kjkS2SNAIdX-PpGf1L8" style="">
+</div>
+<h3 class="text-xl font-bold text-primary mb-2" style="">WD-40 Specialist Penetrant</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed" style="">Проникающая смазка для снятия ржавчины и быстрого демонтажа закисших деталей.</p>
+<button class="w-full py-3 border-2 border-primary-container text-primary-container font-bold rounded-lg group-hover:bg-primary-container group-hover:text-white transition-all" style="">Запросить КП</button>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:shadow-[0px_20px_40px_rgba(0,32,104,0.08)] group">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container flex items-center justify-center p-8">
+<img class="group-hover:scale-105 transition-transform duration-500" data-alt="High tech circuit board being cleaned with specialized electrical contact cleaner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRY1puPhoHO6970psf62hfFTjEtEYb5LIewgJVpbHGI1TO0Fjrem6mijTcxdRekLy8BRzDQMt_YKY53TvU_EgnSIY7mawMJwDwyQcl3vPAoTO10Jp6h0DRos7vReevRWiuTweF4sIvY9AeCwB30hMlF728snM8EsOo5CrfS4vd_Z9j4TqWcWHwXjmx4l167c3dTQfN0Ia_wy5ZT0FNimjQ6Z6i6zwuWCSztjTygM0egJLdVRs1s2TKN4nG6nLjexmCyxhR6Tc-SRU" style="">
+</div>
+<h3 class="text-xl font-bold text-primary mb-2" style="">WD-40 Specialist Contact Cleaner</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed" style="">Очиститель контактов для чувствительного электрооборудования и схем.</p>
+<button class="w-full py-3 border-2 border-primary-container text-primary-container font-bold rounded-lg group-hover:bg-primary-container group-hover:text-white transition-all" style="">Запросить КП</button>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl transition-all duration-300 hover:shadow-[0px_20px_40px_rgba(0,32,104,0.08)] group">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container flex items-center justify-center p-8">
+<img class="group-hover:scale-105 transition-transform duration-500" data-alt="Large industrial containers of WD-40 on a shipping pallet in a distribution center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuvbEM0ZriFFnt7M5vyCCIIG7Ms8PjedwbS8o4EiAdzNXqZSAZocmw0aq_4X6ULbgyVj6JiemVUt9v54jpDrw9Jab0Dg8anXqt49TpmovOjJTPgULgDZq6J90eqmuSKo0ZjknJQhRgc1DhD1-Ut80IkhtSBOch563qNxI-EofPF2UKkJoXLz3Virv_sCylkPQR2DCLXSkJvZORk67x74hOvFJ0_jsWhBCM3yUoPAhadTyZE6dPYplriAVfVQodmF2uqtTr0J3nuS8" style="">
+</div>
+<h3 class="text-xl font-bold text-primary mb-2" style="">WD-40 Industrial Solutions</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed" style="">Решения для промышленного применения в бочках и больших емкостях.</p>
+<button class="w-full py-3 border-2 border-primary-container text-primary-container font-bold rounded-lg group-hover:bg-primary-container group-hover:text-white transition-all" style="">Запросить КП</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Us Section (Asymmetric Bento Grid) -->
+<section class="py-24 bg-white" id="why-us">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-4xl font-extrabold text-primary tracking-tight mb-16" style="">Почему компании выбирают OFAT</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-secondary-container">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="inventory_2" style="">inventory_2</span>
+<h3 class="font-bold text-lg mb-2" style="">Официальная логистика</h3>
+<p class="text-on-surface-variant text-sm" style="">Полное таможенное оформление и прозрачный документооборот.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-secondary-container">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="verified_user" style="">verified_user</span>
+<h3 class="font-bold text-lg mb-2" style="">Гарантия оригинала</h3>
+<p class="text-on-surface-variant text-sm" style="">Мы поставляем только 100% оригинальную продукцию от производителя.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-secondary-container">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="payments" style="">payments</span>
+<h3 class="font-bold text-lg mb-2" style="">Оптовые цены</h3>
+<p class="text-on-surface-variant text-sm" style="">Максимальные скидки для корпоративных клиентов и дилеров.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-secondary-container">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="warehouse" style="">warehouse</span>
+<h3 class="font-bold text-lg mb-2" style="">Наличие на складе</h3>
+<p class="text-on-surface-variant text-sm" style="">Постоянный запас продукции на нашем складе в Ташкенте.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-secondary-container">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="rocket_launch" style="">rocket_launch</span>
+<h3 class="font-bold text-lg mb-2" style="">Быстрая доставка</h3>
+<p class="text-on-surface-variant text-sm" style="">Оперативная отгрузка во все регионы Республики Узбекистан.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-secondary-container">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="support_agent" style="">support_agent</span>
+<h3 class="font-bold text-lg mb-2" style="">B2B Поддержка</h3>
+<p class="text-on-surface-variant text-sm" style="">Персональный менеджер и консультации по применению.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Documents Section -->
+<section class="py-24 bg-surface-container" id="docs">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/3">
+<h2 class="text-4xl font-extrabold text-primary tracking-tight mb-6" style="">Документы и сертификаты</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8" style="">
+                        Сертификаты качества, импортные документы и подтверждающие материалы предоставляются по запросу. Мы работаем полностью в правовом поле.
+                    </p>
+<button class="bg-primary-container text-white px-8 py-3 rounded-lg font-bold" style="">Скачать каталог</button>
+</div>
+<div class="lg:w-2/3 grid md:grid-cols-3 gap-6">
+<div class="bg-white p-6 rounded-xl shadow-sm text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="description" style="">description</span>
+<h4 class="font-bold" style="">Сертификат качества</h4>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="task" style="">task</span>
+<h4 class="font-bold" style="">Импортная декларация</h4>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="file_present" style="">file_present</span>
+<h4 class="font-bold" style="">Документация на продукцию</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Partners Section (Industrial Data Strips) -->
+<section class="py-24 bg-surface-bright">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-3xl font-extrabold text-primary mb-12 text-center" style="">Мы работаем с</h2>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-6 flex flex-wrap justify-between items-center rounded-lg group hover:bg-surface-container-high transition-colors">
+<span class="font-manrope font-bold text-xl text-primary" style="">Дистрибьюторы и оптовые компании</span>
+<span class="text-on-surface-variant font-label uppercase text-xs tracking-widest" style="">Крупный опт</span>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-wrap justify-between items-center rounded-lg group hover:bg-surface-container-high transition-colors">
+<span class="font-manrope font-bold text-xl text-primary" style="">Автосервисы и сервисные сети</span>
+<span class="text-on-surface-variant font-label uppercase text-xs tracking-widest" style="">Техническое обслуживание</span>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-wrap justify-between items-center rounded-lg group hover:bg-surface-container-high transition-colors">
+<span class="font-manrope font-bold text-xl text-primary" style="">Производственные предприятия</span>
+<span class="text-on-surface-variant font-label uppercase text-xs tracking-widest" style="">Индустриальный сектор</span>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-wrap justify-between items-center rounded-lg group hover:bg-surface-container-high transition-colors">
+<span class="font-manrope font-bold text-xl text-primary" style="">Строительные компании</span>
+<span class="text-on-surface-variant font-label uppercase text-xs tracking-widest" style="">Инфраструктура</span>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-wrap justify-between items-center rounded-lg group hover:bg-surface-container-high transition-colors">
+<span class="font-manrope font-bold text-xl text-primary" style="">Розничные магазины и сети</span>
+<span class="text-on-surface-variant font-label uppercase text-xs tracking-widest" style="">Ритейл</span>
+</div>
+</div>
+<p class="mt-12 text-center text-on-surface-variant italic" style="">
+                Мы открыты к сотрудничеству с европейскими партнёрами и международными компаниями.
+            </p>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 bg-white" id="contacts">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid lg:grid-cols-2 gap-16">
+<div class="space-y-12">
+<div>
+<h2 class="text-4xl font-extrabold text-primary mb-6" style="">Связаться с OFAT.UZ</h2>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="location_on" style="">location_on</span>
+<div>
+<h4 class="font-bold" style="">Адрес офиса</h4>
+<p class="text-on-surface-variant" style="">OFAT LLC, г. Ташкент, Узбекистан, Industrial Zone Sector 4</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="mail" style="">mail</span>
+<div>
+<h4 class="font-bold" style="">Email</h4>
+<p class="text-on-surface-variant" style="">info@ofat.uz</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="chat" style="">chat</span>
+<div>
+<h4 class="font-bold" style="">Мессенджеры</h4>
+<div class="flex gap-4 mt-2">
+<a class="text-primary-container font-bold hover:underline" href="#" style="">Telegram</a>
+<a class="text-primary-container font-bold hover:underline" href="#" style="">WhatsApp</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<form class="space-y-4 bg-surface-container-low p-8 rounded-xl">
+<h3 class="font-bold text-xl mb-4" style="">Быстрый запрос</h3>
+<input class="w-full bg-white border-none rounded-md focus:ring-2 focus:ring-secondary-container" placeholder="Ваше имя" type="text">
+<input class="w-full bg-white border-none rounded-md focus:ring-2 focus:ring-secondary-container" placeholder="Email или телефон" type="email">
+<textarea class="w-full bg-white border-none rounded-md focus:ring-2 focus:ring-secondary-container" placeholder="Ваш запрос" rows="4"></textarea>
+<button class="w-full bg-primary-container text-white py-3 rounded-lg font-bold hover:bg-primary transition-all" style="">Отправить</button>
+</form>
+</div>
+<div class="h-full min-h-[400px] rounded-2xl overflow-hidden shadow-lg border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Modern satellite map view of an industrial district in Tashkent, Uzbekistan, showing warehouse grids and logistics centers" data-location="Tashkent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB010h4R48UzzE8BU4i2BwNk-UqbpAxjXu9RzNpXLx6IH0OWgkbrSM9FtYWQBx1BS8sXCqk32t5C2r4n8iJQfhwZ6gUEn2ycw2UNLvhR9L8HEDxMZrGMCkP6pxb1Yqa1D4t7jyUr5pY-lmeO7p65XHM8v4DRJRefCTmBNPBqTickW0r9SWy7uX1XTACfnhtto-l5kRoLIONkDMZ1lrbV7BKR5HH0_p83cUiFSFgXPPIBp6k4iC2Gthlj5gD70I_iFjvsdTt1rCnUZs" style="">
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-50 border-t border-slate-200/20 py-12">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-manrope font-black text-blue-900 text-2xl" style="">OFAT.UZ</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-500 text-sm hover:text-blue-700 transition-colors" href="#" style="">Политика конфиденциальности</a>
+<a class="text-slate-500 text-sm hover:text-blue-700 transition-colors" href="#" style="">Условия использования</a>
+<a class="text-slate-500 text-sm hover:text-blue-700 transition-colors" href="#" style="">Глобальная сеть WD-40</a>
+<a class="text-slate-500 text-sm hover:text-blue-700 transition-colors" href="#" style="">Логистический портал</a>
+</nav>
+<p class="text-slate-500 text-sm font-inter leading-relaxed" style="">
+                © 2024 OFAT.UZ Industrial Solutions. Все права защищены.
+            </p>
+</div>
+</footer>
+</body></html>
