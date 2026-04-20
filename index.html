@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OFAD — One For All Distribution | Международная дистрибуция и импорт</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-error": "#690005",
+                "primary-container": "#e80000",
+                "on-error-container": "#ffdad6",
+                "surface-bright": "#3a3939",
+                "on-primary": "#690000",
+                "on-surface": "#e5e2e1",
+                "tertiary-fixed": "#e4e2e2",
+                "on-tertiary-fixed-variant": "#474747",
+                "inverse-primary": "#c00100",
+                "inverse-surface": "#e5e2e1",
+                "on-tertiary-fixed": "#1b1c1c",
+                "secondary-fixed": "#e5e2e1",
+                "on-primary-fixed-variant": "#930100",
+                "primary-fixed-dim": "#ffb4a8",
+                "primary-fixed": "#ffdad4",
+                "surface-container-lowest": "#0e0e0e",
+                "secondary": "#c9c6c5",
+                "primary": "#ffb4a8",
+                "tertiary-fixed-dim": "#c8c6c6",
+                "tertiary": "#c8c6c6",
+                "on-secondary-fixed-variant": "#474646",
+                "on-secondary-fixed": "#1c1b1b",
+                "on-secondary": "#313030",
+                "on-background": "#e5e2e1",
+                "surface-tint": "#ffb4a8",
+                "surface-container-high": "#2a2a2a",
+                "on-primary-fixed": "#410000",
+                "secondary-fixed-dim": "#c9c6c5",
+                "on-tertiary-container": "#fcfaf9",
+                "surface-variant": "#353534",
+                "on-primary-container": "#fff9f8",
+                "inverse-on-surface": "#313030",
+                "tertiary-container": "#747373",
+                "on-secondary-container": "#bab8b7",
+                "secondary-container": "#4a4949",
+                "outline-variant": "#5f3f39",
+                "on-surface-variant": "#eabcb5",
+                "error-container": "#93000a",
+                "outline": "#b08781",
+                "surface": "#131313",
+                "on-tertiary": "#303030",
+                "surface-container-highest": "#353534",
+                "error": "#ffb4ab",
+                "background": "#131313",
+                "surface-dim": "#131313",
+                "surface-container-low": "#1c1b1b",
+                "surface-container": "#201f1f"
+            },
+            "borderRadius": {
+                "DEFAULT": "0px",
+                "lg": "0px",
+                "xl": "0px",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Inter"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(28, 27, 27, 0.6); backdrop-filter: blur(20px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .red-glow { filter: drop-shadow(0 0 15px rgba(232, 0, 0, 0.3)); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Navigation Shell -->
+<nav class="fixed top-0 flex justify-between items-center w-full px-8 py-4 max-w-full mx-auto bg-surface/60 backdrop-blur-md z-50">
+<div class="text-2xl font-black tracking-tighter text-on-surface">OFAD</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-red-600 font-bold border-b-2 border-red-600 pb-1 text-xs font-bold uppercase tracking-widest" href="#">О компании</a>
+<a class="text-on-surface/80 hover:text-red-600 transition-colors text-xs font-bold uppercase tracking-widest" href="#services">Направления</a>
+<a class="text-on-surface/80 hover:text-red-600 transition-colors text-xs font-bold uppercase tracking-widest" href="#brands">Бренды</a>
+<a class="text-on-surface/80 hover:text-red-600 transition-colors text-xs font-bold uppercase tracking-widest" href="#logistics">Логистика</a>
+<a class="text-on-surface/80 hover:text-red-600 transition-colors text-xs font-bold uppercase tracking-widest" href="#documents">Документы</a>
+<a class="text-on-surface/80 hover:text-red-600 transition-colors text-xs font-bold uppercase tracking-widest" href="#contact">Контакты</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform duration-300">
+            Запросить сотрудничество
+        </button>
+</nav>
+<!-- Section 1: Hero -->
+<header class="relative h-screen w-full overflow-hidden flex items-center">
+<div class="absolute inset-0 z-0">
+<img alt="Logistics Port" class="w-full h-full object-cover grayscale opacity-40" data-alt="Cinematic wide shot of a busy cargo container port at dusk with industrial lighting and deep blue shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuAAU8td2Rq6pBJrhV2nWfHIcvDwhmk-Mf227i5FyavRQZJDrXCP6NzVKnOspaSPfLs7yd_xy2sRQiEwURWEX2RZOxyMm-T708KXUuLTa0zgKE-UDePKoUZe613iWARryNqce44S9OdZev5cCgbGB_kFaL3XvDqKvlO9pECzn7npwnPP968CSQqBnNU6ZBOeU6n3_tPi20tBUXj0nxOB_hrt3DNdFZw8qTVDfWg7HEVV09Vkv31A8I9hOTBQRCQBZEnDJI0tPmUg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+</div>
+<div class="relative z-10 px-8 md:px-24 max-w-5xl">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-px bg-primary-container"></div>
+<span class="text-primary-container text-xs font-bold uppercase tracking-widest">International Distribution Partner</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight">
+                OFAD — международная <br/>
+<span class="text-on-surface/90">дистрибуция и импорт</span> <br/>
+<span class="text-primary-container">в Узбекистан</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface/70 mb-10 max-w-2xl leading-relaxed">
+                Надежный мост между мировыми производителями и рынком Узбекистана. Полный цикл B2B поставок, таможенного сопровождения и складской логистики.
+            </p>
+<div class="flex flex-wrap gap-4 mb-16">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform duration-300">
+                    Запросить сотрудничество
+                </button>
+<button class="border border-outline-variant/40 text-on-surface px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-surface-container-high transition-colors">
+                    Получить прайс-лист
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-outline-variant/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-xs font-bold uppercase tracking-widest opacity-80">Official Import</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="text-xs font-bold uppercase tracking-widest opacity-80">Warehouse Logistics</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">hub</span>
+<span class="text-xs font-bold uppercase tracking-widest opacity-80">B2B Distribution</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+<span class="text-[10px] uppercase tracking-[0.3em]">Scroll Down</span>
+<div class="w-px h-12 bg-gradient-to-b from-primary-container to-transparent"></div>
+</div>
+</header>
+<!-- Section 2: About -->
+<section class="py-24 px-8 md:px-24 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center overflow-hidden">
+<div class="relative">
+<span class="text-primary-container text-xs font-bold uppercase tracking-widest block mb-4">Наша Экспертиза</span>
+<h2 class="text-4xl font-semibold tracking-tight mb-8">Масштабные решения для <br/>развивающегося рынка</h2>
+<p class="text-lg text-on-surface/70 leading-relaxed mb-12">
+                OFAD специализируется на импорте высококачественных товаров и промышленной продукции в Узбекистан. Мы не просто перевозим грузы — мы выстраиваем долгосрочные партнерские отношения, обеспечивая 100% прозрачность каждой транзакции. Наша команда управляет всей цепочкой поставок, от завода-изготовителя до полки магазина или склада конечного потребителя.
+            </p>
+<div class="grid grid-cols-2 gap-10">
+<div>
+<div class="text-4xl font-black text-primary-container mb-2">20+</div>
+<div class="text-xs font-bold uppercase tracking-widest opacity-60">Брендов в портфеле</div>
+</div>
+<div>
+<div class="text-4xl font-black text-primary-container mb-2">10+</div>
+<div class="text-xs font-bold uppercase tracking-widest opacity-60">Лет опыта</div>
+</div>
+<div>
+<div class="text-4xl font-black text-primary-container mb-2">100%</div>
+<div class="text-xs font-bold uppercase tracking-widest opacity-60">Покрытие страны</div>
+</div>
+<div>
+<div class="text-4xl font-black text-primary-container mb-2">500+</div>
+<div class="text-xs font-bold uppercase tracking-widest opacity-60">Активных клиентов</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-4 -left-4 w-32 h-32 border-t-2 border-l-2 border-primary-container/30"></div>
+<img alt="Warehouse" class="w-full h-[600px] object-cover grayscale" data-alt="Interior of a modern high-tech warehouse with automated shelving systems and organized industrial inventory" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpIopErizVZ8tWYe5ERO9SnnFGwrtPbHj4qHEfxstGgBHAwq7ARdaswLu7WrDS7Lulr7oZS5bV9Kw6nF7nUrKYNK0EAml6Ml7ZveuHFxb9jd-YiemN0wNc5hk5XciadXo57_B-c5AKrhFrggIZCDP58JRLiZXLCZ6MGeYbpUZiGcy48-VDBYJNwviWdXaYJ-uQdhU4bsw5jbUKuorv73zLJmMP7b6Dh2-5iBYE6I20VUYr6RYGR1h3sLcWw6miExYgtM_-WRUrNw"/>
+<div class="absolute -bottom-10 -right-10 glass-panel p-8 hidden md:block border-b-4 border-primary-container">
+<p class="text-2xl font-bold tracking-tighter">Direct Distribution</p>
+<p class="text-xs opacity-60 uppercase tracking-widest">Optimized Routes</p>
+</div>
+</div>
+</section>
+<!-- Section 3: Services -->
+<section class="py-24 bg-surface-container-low px-8 md:px-24" id="services">
+<div class="text-center mb-20">
+<span class="text-primary-container text-xs font-bold uppercase tracking-widest block mb-4">Наши Сервисы</span>
+<h2 class="text-4xl font-semibold tracking-tight">Комплексные логистические услуги</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-outline-variant/10">
+<!-- Service Card 1 -->
+<div class="bg-surface group relative overflow-hidden p-12 hover:bg-surface-container-high transition-colors duration-500">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary-container transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-8">description</span>
+<h3 class="text-xl font-bold mb-4">Импорт и таможенное оформление</h3>
+<p class="text-on-surface/60 leading-relaxed">Полное юридическое сопровождение, сертификация и очистка грузов любой сложности.</p>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface group relative overflow-hidden p-12 hover:bg-surface-container-high transition-colors duration-500">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary-container transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-8">group</span>
+<h3 class="text-xl font-bold mb-4">Оптовая дистрибуция</h3>
+<p class="text-on-surface/60 leading-relaxed">Поставки товаров в крупные торговые сети и специализированные магазины по всему региону.</p>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface group relative overflow-hidden p-12 hover:bg-surface-container-high transition-colors duration-500">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary-container transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-8">warehouse</span>
+<h3 class="text-xl font-bold mb-4">Склад и хранение</h3>
+<p class="text-on-surface/60 leading-relaxed">Современные складские комплексы класса А с адресным хранением и контролем температуры.</p>
+</div>
+<!-- Service Card 4 -->
+<div class="bg-surface group relative overflow-hidden p-12 hover:bg-surface-container-high transition-colors duration-500">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary-container transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-8">local_shipping</span>
+<h3 class="text-xl font-bold mb-4">Региональная доставка</h3>
+<p class="text-on-surface/60 leading-relaxed">Собственный автопарк и отработанные маршруты во все регионы Республики Узбекистан.</p>
+</div>
+<!-- Service Card 5 -->
+<div class="bg-surface group relative overflow-hidden p-12 hover:bg-surface-container-high transition-colors duration-500">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary-container transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-8">business_center</span>
+<h3 class="text-xl font-bold mb-4">Корпоративные поставки</h3>
+<p class="text-on-surface/60 leading-relaxed">Индивидуальные контракты и специальные условия для крупных корпоративных заказчиков.</p>
+</div>
+<!-- Service Card 6 -->
+<div class="bg-surface group relative overflow-hidden p-12 hover:bg-surface-container-high transition-colors duration-500">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary-container transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-8">store</span>
+<h3 class="text-xl font-bold mb-4">Работа с сетями</h3>
+<p class="text-on-surface/60 leading-relaxed">Полный цикл мерчандайзинга, маркетинговая поддержка и представленность в ритейле.</p>
+</div>
+</div>
+</section>
+<!-- Section 4: Brands -->
+<section class="py-24 bg-black px-8 md:px-24" id="brands">
+<h2 class="text-4xl font-semibold tracking-tight text-white mb-20">Бренды в портфеле OFAD</h2>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Brand Highlight WD-40 -->
+<div class="lg:col-span-8 bg-surface-container-low flex flex-col md:flex-row overflow-hidden border border-outline-variant/10">
+<div class="flex-1 p-12 flex flex-col justify-center">
+<img alt="WD-40 product" class="w-full h-64 object-contain mb-8 grayscale hover:grayscale-0 transition-all duration-500" data-alt="Professional studio photo of a WD-40 spray can with its iconic blue and yellow branding on a clean dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1ZCI6VNViqdmdkxVmPumSibNnDhsU9k9DqPfeJ20K7tLQk33xQLsNcNZmY6Q6REcvNgCBG7GJealaIvmUvjecrdu7mD5QN9cL7Nu6CwXj1cUYXGtIrjZ4eT3Lk_Vdvcqbpe1fX9RzRYqeHECx4pyz2Z6qu1S5VsWRyUWKSpTgyohuHZE80lNKquQscOCgjH_Otq1XBUxLkClto4NF9s-qmzGWNeE68pDZuCjTkH8Kxq1WRlgkBJ25Vf9xos0EBkDpXuYFckAj1Q"/>
+<h3 class="text-2xl font-bold mb-4">Официальный дистрибьютор WD-40</h3>
+<p class="text-on-surface/60 mb-8">Легендарное качество теперь доступно напрямую от импортера. Полный ассортимент продукции WD-40 для любых задач.</p>
+<button class="w-fit border-b-2 border-primary-container pb-2 text-xs font-bold uppercase tracking-widest hover:text-primary-container transition-colors">
+                        Запросить прайс-лист WD-40
+                    </button>
+</div>
+</div>
+<!-- Other Brands Grid -->
+<div class="lg:col-span-4 grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low flex items-center justify-center p-8 border border-outline-variant/5">
+<span class="text-xl font-black opacity-20 grayscale">LOGO 1</span>
+</div>
+<div class="bg-surface-container-low flex items-center justify-center p-8 border border-outline-variant/5">
+<span class="text-xl font-black opacity-20 grayscale">LOGO 2</span>
+</div>
+<div class="bg-surface-container-low flex items-center justify-center p-8 border border-outline-variant/5">
+<span class="text-xl font-black opacity-20 grayscale">LOGO 3</span>
+</div>
+<div class="bg-surface-container-low flex items-center justify-center p-8 border border-outline-variant/5">
+<span class="text-xl font-black opacity-20 grayscale">LOGO 4</span>
+</div>
+<div class="bg-surface-container-low flex items-center justify-center p-8 border border-outline-variant/5">
+<span class="text-xl font-black opacity-20 grayscale">LOGO 5</span>
+</div>
+<div class="bg-surface-container-low flex items-center justify-center p-8 border border-outline-variant/5">
+<span class="text-xl font-black opacity-20 grayscale">LOGO 6</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Logistics -->
+<section class="relative py-32 overflow-hidden" id="logistics">
+<div class="absolute inset-0 z-0">
+<img alt="Logistics fleet" class="w-full h-full object-cover grayscale opacity-50" data-alt="Cinematic shot of a modern fleet of logistic trucks driving on a long highway across a vast landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHu3NdluUX7ZcUj6e3fBgvA7FSUA7FLP5_Y-zDOxsPNf1WESDvZS5cgTgLKyS5B_sBwQ71Hrh2mY0jLgw7MOjCN6CF_9UbWNaBCYybQMKim3tzTAkebqjqqUG9OLQMUDlNwcv5dqGnsD4GFxf2H9TkUxNf48FRUmQhHM2H0BtnL-lYjRzEYuV0zUf35KwCA8Vg6wrnd-NFvuzN5-9yfxMjhsjWSizYe-8JSyOUKHVuNS-EUXi-mlr9mHqZ2I-KFPj3AyqrBjhoIg"/>
+<div class="absolute inset-0 bg-surface/80"></div>
+</div>
+<div class="relative z-10 px-8 md:px-24">
+<h2 class="text-4xl font-semibold tracking-tight mb-20 text-center">Безупречная логистическая цепь</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-panel p-10 border-l-2 border-primary-container">
+<h4 class="text-lg font-bold mb-4">Таможенное оформление</h4>
+<p class="text-sm text-on-surface/70">Минимизация рисков и ускоренная обработка документации на границе.</p>
+</div>
+<div class="glass-panel p-10 border-l-2 border-primary-container">
+<h4 class="text-lg font-bold mb-4">Контроль качества</h4>
+<p class="text-sm text-on-surface/70">Проверка каждой партии товара на соответствие стандартам производителя.</p>
+</div>
+<div class="glass-panel p-10 border-l-2 border-primary-container">
+<h4 class="text-lg font-bold mb-4">Складские мощности</h4>
+<p class="text-sm text-on-surface/70">Более 5000 кв.м. оборудованных складских помещений в Ташкенте.</p>
+</div>
+<div class="glass-panel p-10 border-l-2 border-primary-container">
+<h4 class="text-lg font-bold mb-4">Быстрая доставка</h4>
+<p class="text-sm text-on-surface/70">Доставка до склада клиента в течение 24-48 часов по всему Узбекистану.</p>
+</div>
+<div class="glass-panel p-10 border-l-2 border-primary-container">
+<h4 class="text-lg font-bold mb-4">Работа по контракту</h4>
+<p class="text-sm text-on-surface/70">Прозрачные договорные условия и строгое соблюдение сроков.</p>
+</div>
+<div class="glass-panel p-10 border-l-2 border-primary-container">
+<h4 class="text-lg font-bold mb-4">Поддержка B2B</h4>
+<p class="text-sm text-on-surface/70">Персональный менеджер и гибкая система отсрочки платежей для партнеров.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Documents -->
+<section class="py-24 bg-white text-black px-8 md:px-24" id="documents">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div>
+<span class="text-primary-container text-xs font-bold uppercase tracking-widest block mb-4">Юридическая чистота</span>
+<h2 class="text-4xl font-semibold tracking-tight">Сертификация и документы</h2>
+</div>
+<p class="text-black/60 max-w-md">Все документы предоставляются по первому запросу партнеров. Мы работаем строго в рамках законодательства РУз.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="border border-black/10 p-10 hover:shadow-2xl transition-shadow">
+<span class="material-symbols-outlined text-primary-container mb-6">description</span>
+<h4 class="font-bold mb-2">Import Declaration</h4>
+<p class="text-xs opacity-60">ГТД на каждую партию</p>
+</div>
+<div class="border border-black/10 p-10 hover:shadow-2xl transition-shadow">
+<span class="material-symbols-outlined text-primary-container mb-6">verified_user</span>
+<h4 class="font-bold mb-2">Quality Certificates</h4>
+<p class="text-xs opacity-60">Сертификаты соответствия РУз</p>
+</div>
+<div class="border border-black/10 p-10 hover:shadow-2xl transition-shadow">
+<span class="material-symbols-outlined text-primary-container mb-6">inventory</span>
+<h4 class="font-bold mb-2">Product Docs</h4>
+<p class="text-xs opacity-60">Технические паспорта и MSDS</p>
+</div>
+<div class="border border-black/10 p-10 hover:shadow-2xl transition-shadow">
+<span class="material-symbols-outlined text-primary-container mb-6">corporate_fare</span>
+<h4 class="font-bold mb-2">Company Reg</h4>
+<p class="text-xs opacity-60">Уставные документы OFAD LLC</p>
+</div>
+</div>
+</section>
+<!-- Section 7: Why Us (Timeline) -->
+<section class="py-24 px-8 md:px-24 border-t border-outline-variant/10">
+<h2 class="text-4xl font-semibold tracking-tight mb-20 text-center">Почему выбирают OFAD</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 relative">
+<!-- Pillar 1 -->
+<div class="relative flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-high flex items-center justify-center text-primary-container font-black text-2xl mb-8 relative z-10">01</div>
+<h3 class="text-xl font-bold mb-4">Официальная схема</h3>
+<p class="text-on-surface/60 text-sm">Только «белый» импорт с полной уплатой всех налогов и сборов.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="relative flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-high flex items-center justify-center text-primary-container font-black text-2xl mb-8 relative z-10">02</div>
+<h3 class="text-xl font-bold mb-4">Прозрачные условия</h3>
+<p class="text-on-surface/60 text-sm">Четкое ценообразование без скрытых комиссий и платежей.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="relative flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-high flex items-center justify-center text-primary-container font-black text-2xl mb-8 relative z-10">03</div>
+<h3 class="text-xl font-bold mb-4">Гарантия оригинала</h3>
+<p class="text-on-surface/60 text-sm">Прямые поставки от заводов-изготовителей мировых брендов.</p>
+</div>
+<!-- Pillar 4 -->
+<div class="relative flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-high flex items-center justify-center text-primary-container font-black text-2xl mb-8 relative z-10">04</div>
+<h3 class="text-xl font-bold mb-4">Стабильные поставки</h3>
+<p class="text-on-surface/60 text-sm">Регулярное пополнение складских запасов независимо от сезона.</p>
+</div>
+<!-- Pillar 5 -->
+<div class="relative flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-high flex items-center justify-center text-primary-container font-black text-2xl mb-8 relative z-10">05</div>
+<h3 class="text-xl font-bold mb-4">Современная логистика</h3>
+<p class="text-on-surface/60 text-sm">Использование IT-систем для контроля грузов на всех этапах.</p>
+</div>
+<!-- Pillar 6 -->
+<div class="relative flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-high flex items-center justify-center text-primary-container font-black text-2xl mb-8 relative z-10">06</div>
+<h3 class="text-xl font-bold mb-4">Партнерство</h3>
+<p class="text-on-surface/60 text-sm">Мы растем вместе с нашими клиентами, предлагая лучшие решения.</p>
+</div>
+</div>
+</section>
+<!-- Section 8: Contact -->
+<section class="py-24 px-8 md:px-24 bg-surface-container-lowest relative overflow-hidden" id="contact">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-primary-container/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div>
+<h2 class="text-4xl font-semibold tracking-tight mb-12">Обсудим <br/><span class="text-primary-container">ваши задачи?</span></h2>
+<div class="space-y-8">
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary-container">location_on</span>
+<div>
+<p class="text-xs font-bold uppercase tracking-widest mb-1 opacity-60">Офис и склад</p>
+<p class="text-lg">OFAD LLC, Tashkent city, Uzbekistan</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary-container">mail</span>
+<div>
+<p class="text-xs font-bold uppercase tracking-widest mb-1 opacity-60">Email</p>
+<p class="text-lg">info@ofad.uz</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary-container">call</span>
+<div>
+<p class="text-xs font-bold uppercase tracking-widest mb-1 opacity-60">Телефон</p>
+<p class="text-lg">+998 (XX) XXX-XX-XX</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-12 border border-outline-variant/10">
+<form class="space-y-6">
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold opacity-60">Ваше имя</label>
+<input class="w-full bg-transparent border-b border-outline-variant focus:border-primary-container focus:ring-0 transition-colors py-3 outline-none" placeholder="Иван Иванов" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold opacity-60">Компания</label>
+<input class="w-full bg-transparent border-b border-outline-variant focus:border-primary-container focus:ring-0 transition-colors py-3 outline-none" placeholder="Название организации" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold opacity-60">Электронная почта</label>
+<input class="w-full bg-transparent border-b border-outline-variant focus:border-primary-container focus:ring-0 transition-colors py-3 outline-none" placeholder="example@mail.com" type="email"/>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold opacity-60">Сообщение</label>
+<textarea class="w-full bg-transparent border-b border-outline-variant focus:border-primary-container focus:ring-0 transition-colors py-3 outline-none resize-none" placeholder="Опишите ваши потребности..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-5 text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all mt-8">
+                        Отправить запрос
+                    </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer Shell -->
+<footer class="w-full px-12 py-16 flex flex-col md:flex-row justify-between items-start border-t border-zinc-900 bg-zinc-950">
+<div class="mb-10 md:mb-0">
+<div class="text-xl font-black text-on-surface mb-6">OFAD</div>
+<p class="text-xs font-bold uppercase tracking-widest text-zinc-500">© OFAD.UZ — One For All Distribution</p>
+</div>
+<div class="flex flex-col md:flex-row gap-12">
+<div class="flex flex-col gap-4">
+<span class="text-xs font-bold uppercase tracking-widest text-primary-container">Contact</span>
+<a class="text-zinc-500 hover:text-red-600 transition-colors" href="mailto:info@ofad.uz">info@ofad.uz</a>
+<a class="text-zinc-500 hover:text-red-600 transition-colors" href="tel:+998XXXXXXXXX">+998 (XX) XXX-XX-XX</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-xs font-bold uppercase tracking-widest text-primary-container">Legal</span>
+<a class="text-zinc-500 hover:text-red-600 transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-xs font-bold uppercase tracking-widest text-primary-container">Social</span>
+<a class="text-zinc-500 hover:text-red-600 transition-colors" href="#">LinkedIn</a>
+<a class="text-zinc-500 hover:text-red-600 transition-colors" href="#">Telegram</a>
+</div>
+</div>
+</footer>
+</body></html>
