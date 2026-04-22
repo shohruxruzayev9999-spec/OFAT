@@ -701,153 +701,98 @@
       text-transform: uppercase;
     }
 
-    .wd40-can {
-      width: min(290px, 74%);
-      aspect-ratio: 0.58;
-      border-radius: 32px 32px 18px 18px;
-      background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.2), transparent 18%, rgba(0, 0, 0, 0.18) 82%, rgba(255, 255, 255, 0.1)),
-        linear-gradient(180deg, #0056a6 0 42%, #f7d30a 42% 66%, #0056a6 66% 100%);
-      box-shadow:
-        0 34px 70px rgba(0, 0, 0, 0.36),
-        inset 0 0 0 10px rgba(255, 255, 255, 0.08);
+    .brand-photo-grid {
+      width: min(560px, 100%);
       display: grid;
-      place-items: center;
-      color: #ffe100;
-      transform: rotate(-4deg);
+      gap: 14px;
     }
 
-    .wd40-can strong {
-      display: block;
-      color: #ffe100;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(2.3rem, 5vw, 4rem);
-      line-height: 0.88;
-      letter-spacing: -0.08em;
-      text-align: center;
-      text-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
-    }
-
-    .wd40-can span {
-      display: block;
-      margin-top: 12px;
-      color: var(--white);
-      font-size: 0.7rem;
-      font-weight: 900;
-      letter-spacing: 0.24em;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    .weber-products {
-      width: min(520px, 100%);
-      display: grid;
-      grid-template-columns: 0.9fr 1fr;
-      gap: 18px;
-      align-items: end;
-    }
-
-    .product-pack {
+    .brand-photo-card {
       position: relative;
-      min-height: 255px;
-      padding: 18px;
-      background: var(--white);
-      border-radius: 16px 16px 10px 10px;
-      box-shadow: 0 26px 46px rgba(11, 11, 11, 0.18);
       overflow: hidden;
+      margin: 0;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      box-shadow: 0 28px 60px rgba(11, 11, 11, 0.2);
       isolation: isolate;
     }
 
-    .product-pack::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 56%;
-      background:
-        linear-gradient(180deg, rgba(255, 229, 0, 0.96), rgba(255, 229, 0, 0.72)),
-        linear-gradient(135deg, rgba(0, 164, 216, 0.26), transparent);
-      z-index: -1;
+    .brand-photo-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .product-pack::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 35%;
-      background: linear-gradient(180deg, #fff, #f7f7f7);
-      z-index: -1;
+    .wd40-image-stack {
+      min-height: 356px;
+      grid-template-columns: minmax(0, 1fr) minmax(110px, 0.42fr);
+      align-items: stretch;
     }
 
-    .product-pack.large {
-      min-height: 340px;
-    }
-
-    .product-pin {
-      width: 62%;
-      aspect-ratio: 1 / 1.15;
-      margin: 14px auto 12px;
+    .wd40-photo-main {
+      min-height: 356px;
       display: grid;
       place-items: center;
-      color: #ffe500;
-      background: var(--red);
-      border-radius: 999px 999px 999px 140px;
-      transform: rotate(45deg);
-      box-shadow: 0 18px 30px rgba(232, 0, 0, 0.2);
+      padding: 18px;
+      background:
+        radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.22), transparent 34%),
+        linear-gradient(145deg, rgba(0, 56, 161, 0.84), rgba(5, 11, 40, 0.96));
+      border-radius: 30px;
     }
 
-    .product-pin.blue {
-      background: var(--blue);
-      color: #eaff00;
+    .wd40-photo-main img {
+      width: min(104%, 440px);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 28px 38px rgba(0, 0, 0, 0.35));
     }
 
-    .product-pin.gold {
-      background: #d9b400;
-      color: #fff7a6;
+    .wd40-logo-card,
+    .wd40-side-product {
+      min-height: 170px;
+      display: grid;
+      place-items: center;
+      padding: 14px;
+      border-radius: 24px;
+      background: var(--white);
     }
 
-    .product-pin span {
-      transform: rotate(-45deg);
-      width: 76%;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(1rem, 1.8vw, 1.45rem);
-      line-height: 1;
-      letter-spacing: -0.04em;
-      text-align: center;
+    .wd40-logo-card {
+      background: #112f86;
     }
 
-    .product-footer {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-top: 16px;
+    .wd40-logo-card img,
+    .wd40-side-product img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.18));
     }
 
-    .product-footer strong {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      letter-spacing: -0.07em;
-      line-height: 1;
+    .weber-photo-grid {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      align-items: stretch;
     }
 
-    .product-footer small {
-      color: var(--text);
-      font-weight: 900;
+    .weber-photo-card {
+      min-height: 168px;
+      border-radius: 26px;
     }
 
-    .product-chip {
-      display: inline-flex;
-      width: 44px;
-      height: 44px;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      color: #1f1f1f;
-      background: var(--yellow);
-      font-size: 0.63rem;
-      font-weight: 900;
-      line-height: 0.95;
-      text-align: center;
+    .weber-photo-card.feature {
+      grid-row: span 2;
+      min-height: 350px;
+    }
+
+    .weber-photo-card img {
+      object-position: center;
+      transition: transform 500ms ease;
+    }
+
+    .brand-card:hover .weber-photo-card img,
+    .brand-card:hover .wd40-photo-main img {
+      transform: scale(1.035);
     }
 
     .weber-showcase {
@@ -879,44 +824,44 @@
     .mini-products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 16px;
       margin-top: 28px;
     }
 
     .mini-pack {
-      min-height: 154px;
-      padding: 14px;
-      background:
-        linear-gradient(180deg, var(--yellow) 0 58%, var(--white) 58% 100%);
-      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
+      overflow: hidden;
+      min-height: 270px;
+      background: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 22px 42px rgba(0, 0, 0, 0.24);
     }
 
-    .mini-pack span {
-      display: grid;
-      place-items: center;
-      width: 74px;
-      height: 78px;
-      margin: 0 auto 18px;
-      color: var(--white);
-      background: var(--red);
-      border-radius: 48px 48px 48px 10px;
-      transform: rotate(45deg);
-      font-size: 0.68rem;
-      font-weight: 900;
-      line-height: 1;
-      text-align: center;
+    .mini-pack img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
     }
 
-    .mini-pack span em {
-      font-style: normal;
-      transform: rotate(-45deg);
+    .mini-pack-body {
+      padding: 14px 16px 16px;
     }
 
     .mini-pack strong {
       display: block;
+      color: var(--black);
       font-size: 0.83rem;
       line-height: 1.15;
       letter-spacing: -0.02em;
+    }
+
+    .mini-pack span {
+      display: block;
+      margin-top: 8px;
+      color: var(--text);
+      font-size: 0.72rem;
+      line-height: 1.45;
     }
 
     .logistics-wrap {
@@ -1200,8 +1145,13 @@
         min-height: auto;
       }
 
-      .weber-products {
+      .wd40-image-stack,
+      .weber-photo-grid {
         grid-template-columns: 1fr;
+      }
+
+      .weber-photo-card.feature {
+        grid-row: auto;
       }
 
       .mini-products {
@@ -1353,11 +1303,16 @@
         <div class="brands-grid">
           <article class="brand-card">
             <div class="brand-stage dark">
-              <div class="wd40-can" role="img" aria-label="WD-40 product presentation">
-                <div>
-                  <strong>WD<br />40</strong>
-                  <span>Official supply</span>
-                </div>
+              <div class="brand-photo-grid wd40-image-stack" aria-label="WD-40 product presentation">
+                <figure class="brand-photo-card wd40-photo-main">
+                  <img src="assets/wd40-200ml.png" alt="WD-40 200 ml multi-use product" width="1800" height="1200" loading="lazy" decoding="async" />
+                </figure>
+                <figure class="brand-photo-card wd40-logo-card">
+                  <img src="assets/wd40-logo.jpg" alt="WD-40 logo" width="1500" height="874" loading="lazy" decoding="async" />
+                </figure>
+                <figure class="brand-photo-card wd40-side-product">
+                  <img src="assets/wd40-100ml.jpg" alt="WD-40 100 ml product" width="1000" height="900" loading="lazy" decoding="async" />
+                </figure>
               </div>
             </div>
             <div class="brand-content">
@@ -1372,22 +1327,16 @@
 
           <article class="brand-card">
             <div class="brand-stage weber">
-              <div class="weber-products" role="img" aria-label="WEBER product presentation">
-                <div class="product-pack">
-                  <div class="product-pin gold"><span>weber.kol flex extra</span></div>
-                  <div class="product-footer">
-                    <strong>weber</strong>
-                    <small>25kg</small>
-                  </div>
-                </div>
-                <div class="product-pack large">
-                  <div class="product-pin"><span>weber.joint flex</span></div>
-                  <div class="product-footer">
-                    <span class="product-chip">we<br />care</span>
-                    <strong>weber</strong>
-                    <small>20kg</small>
-                  </div>
-                </div>
+              <div class="brand-photo-grid weber-photo-grid" aria-label="WEBER product presentation">
+                <figure class="brand-photo-card weber-photo-card feature">
+                  <img src="assets/weber-kley-showcase.jpg" alt="WEBER KLEY product showcase" width="1400" height="1841" loading="lazy" decoding="async" />
+                </figure>
+                <figure class="brand-photo-card weber-photo-card">
+                  <img src="assets/weber-izolyatsiya-showcase.jpg" alt="WEBER dry SS-10 product showcase" width="1400" height="1841" loading="lazy" decoding="async" />
+                </figure>
+                <figure class="brand-photo-card weber-photo-card">
+                  <img src="assets/weber-fuga-showcase.jpg" alt="WEBER joint flex product showcase" width="1400" height="1841" loading="lazy" decoding="async" />
+                </figure>
               </div>
             </div>
             <div class="brand-content">
@@ -1599,7 +1548,26 @@
           copy: "WEBER представлен не как отдельная упаковка на темном фоне, а как часть профессиональной цепочки: импорт, склад, дилерская поставка и объектное снабжение.",
           supplyTitle: "Dealer-ready distribution",
           supplyCopy: "Продуктовые линейки оформлены в чистые карточки с яркими акцентами упаковки, чтобы бренд выглядел узнаваемо и профессионально.",
-          products: ["weber.joint flex", "weber.kol flex extra", "weber.dry ss-10"]
+          products: [
+            {
+              title: "WEBER KLEY",
+              caption: "Клейевые смеси для фасадов, бассейнов и надежной облицовки.",
+              image: "assets/weber-kley-showcase.jpg",
+              alt: "WEBER KLEY product showcase"
+            },
+            {
+              title: "WEBER IZOLYATSIYASI",
+              caption: "Гидроизоляционные решения для влажных и профессиональных объектов.",
+              image: "assets/weber-izolyatsiya-showcase.jpg",
+              alt: "WEBER dry SS-10 product showcase"
+            },
+            {
+              title: "WEBER FUGA",
+              caption: "Затирочные решения для бассейнов, резервуаров и сложных условий.",
+              image: "assets/weber-fuga-showcase.jpg",
+              alt: "WEBER joint flex product showcase"
+            }
+          ]
         },
         logistics: {
           label: "Логистика",
@@ -1722,7 +1690,26 @@
           copy: "WEBER alohida qadoq sifatida emas, balki professional zanjirning bir qismi sifatida ko‘rsatiladi: import, ombor, dilerlarga yetkazib berish va obyekt ta’minoti.",
           supplyTitle: "Dilerlar uchun tayyor distribyutsiya",
           supplyCopy: "Mahsulot yo‘nalishlari yorqin qadoq aksentlari bilan toza kartalarda berildi, shunda brend taniqli va professional ko‘rinadi.",
-          products: ["weber.joint flex", "weber.kol flex extra", "weber.dry ss-10"]
+          products: [
+            {
+              title: "WEBER KLEY",
+              caption: "Fasad, basseyn va ishonchli qoplama ishlari uchun kley qorishmalari.",
+              image: "assets/weber-kley-showcase.jpg",
+              alt: "WEBER KLEY product showcase"
+            },
+            {
+              title: "WEBER IZOLYATSIYASI",
+              caption: "Nam va professional obyektlar uchun gidrohimoya yechimlari.",
+              image: "assets/weber-izolyatsiya-showcase.jpg",
+              alt: "WEBER dry SS-10 product showcase"
+            },
+            {
+              title: "WEBER FUGA",
+              caption: "Basseyn, rezervuar va murakkab sharoitlar uchun fuga yechimlari.",
+              image: "assets/weber-fuga-showcase.jpg",
+              alt: "WEBER joint flex product showcase"
+            }
+          ]
         },
         logistics: {
           label: "Logistika",
@@ -1804,10 +1791,13 @@
       renderList("wd40Meta", t.brands.items.wd40.meta, (item) => `<span>${item}</span>`);
       renderList("weberMeta", t.brands.items.weber.meta, (item) => `<span>${item}</span>`);
 
-      renderList("miniProducts", t.weber.products, (item, index) => `
+      renderList("miniProducts", t.weber.products, (item) => `
         <div class="mini-pack">
-          <span style="background:${index === 2 ? "var(--blue)" : index === 1 ? "#d9b400" : "var(--red)"}"><em>${item.replace(" ", "<br>")}</em></span>
-          <strong>${item}</strong>
+          <img src="${item.image}" alt="${item.alt}" loading="lazy" decoding="async">
+          <div class="mini-pack-body">
+            <strong>${item.title}</strong>
+            <span>${item.caption}</span>
+          </div>
         </div>
       `);
 
