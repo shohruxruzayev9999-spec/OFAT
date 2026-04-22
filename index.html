@@ -731,6 +731,7 @@
     }
 
     .wd40-photo-main {
+      grid-row: span 2;
       min-height: 356px;
       display: grid;
       place-items: center;
@@ -742,8 +743,9 @@
     }
 
     .wd40-photo-main img {
-      width: min(104%, 440px);
-      height: auto;
+      width: auto;
+      height: 100%;
+      max-width: 100%;
       object-fit: contain;
       filter: drop-shadow(0 28px 38px rgba(0, 0, 0, 0.35));
     }
@@ -762,17 +764,39 @@
       background: #112f86;
     }
 
-    .wd40-logo-card img,
-    .wd40-side-product img {
+    .wd40-logo-card img {
       width: 100%;
       height: auto;
       object-fit: contain;
       filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.18));
     }
 
+    .wd40-side-product img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.18));
+    }
+
     .weber-photo-grid {
       grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
       align-items: stretch;
+    }
+
+    .weber-logo-card {
+      grid-column: 1 / -1;
+      min-height: 96px;
+      display: grid;
+      place-items: center;
+      padding: 16px 24px;
+      border-radius: 26px;
+    }
+
+    .weber-logo-card img {
+      width: min(100%, 460px);
+      height: auto;
+      object-fit: contain;
     }
 
     .weber-photo-card {
@@ -786,7 +810,11 @@
     }
 
     .weber-photo-card img {
+      padding: 12px;
+      background: var(--white);
+      object-fit: contain;
       object-position: center;
+      box-sizing: border-box;
       transition: transform 500ms ease;
     }
 
@@ -840,8 +868,11 @@
       display: block;
       width: 100%;
       aspect-ratio: 4 / 5;
-      object-fit: cover;
+      padding: 10px;
+      background: var(--white);
+      object-fit: contain;
       object-position: center;
+      box-sizing: border-box;
     }
 
     .mini-pack-body {
@@ -1305,13 +1336,13 @@
             <div class="brand-stage dark">
               <div class="brand-photo-grid wd40-image-stack" aria-label="WD-40 product presentation">
                 <figure class="brand-photo-card wd40-photo-main">
-                  <img src="assets/wd40-200ml.png" alt="WD-40 200 ml multi-use product" width="1800" height="1200" loading="lazy" decoding="async" />
+                  <img src="assets/wd40-can-400ml.jpg" alt="WD-40 400 ml multi-use product" width="1100" height="1955" loading="lazy" decoding="async" />
                 </figure>
                 <figure class="brand-photo-card wd40-logo-card">
-                  <img src="assets/wd40-logo.jpg" alt="WD-40 logo" width="1500" height="874" loading="lazy" decoding="async" />
+                  <img src="assets/wd40-logo.jpg" alt="WD-40 logo" width="1400" height="1400" loading="lazy" decoding="async" />
                 </figure>
                 <figure class="brand-photo-card wd40-side-product">
-                  <img src="assets/wd40-100ml.jpg" alt="WD-40 100 ml product" width="1000" height="900" loading="lazy" decoding="async" />
+                  <img src="assets/wd40-can-closeup.jpg" alt="WD-40 can close-up" width="1100" height="1955" loading="lazy" decoding="async" />
                 </figure>
               </div>
             </div>
@@ -1328,14 +1359,17 @@
           <article class="brand-card">
             <div class="brand-stage weber">
               <div class="brand-photo-grid weber-photo-grid" aria-label="WEBER product presentation">
+                <figure class="brand-photo-card weber-logo-card">
+                  <img src="assets/weber-logo.jpg" alt="WEBER Saint-Gobain logo" width="1600" height="561" loading="lazy" decoding="async" />
+                </figure>
                 <figure class="brand-photo-card weber-photo-card feature">
-                  <img src="assets/weber-kley-showcase.jpg" alt="WEBER KLEY product showcase" width="1400" height="1841" loading="lazy" decoding="async" />
+                  <img src="assets/weber-kley-showcase.jpg" alt="WEBER KLEY product showcase" width="1400" height="2100" loading="lazy" decoding="async" />
                 </figure>
                 <figure class="brand-photo-card weber-photo-card">
-                  <img src="assets/weber-izolyatsiya-showcase.jpg" alt="WEBER dry SS-10 product showcase" width="1400" height="1841" loading="lazy" decoding="async" />
+                  <img src="assets/weber-izolyatsiya-showcase.jpg" alt="WEBER dry SS-10 product showcase" width="1050" height="1143" loading="lazy" decoding="async" />
                 </figure>
                 <figure class="brand-photo-card weber-photo-card">
-                  <img src="assets/weber-fuga-showcase.jpg" alt="WEBER joint flex product showcase" width="1400" height="1841" loading="lazy" decoding="async" />
+                  <img src="assets/weber-fuga-showcase.jpg" alt="WEBER joint flex product showcase" width="1000" height="1111" loading="lazy" decoding="async" />
                 </figure>
               </div>
             </div>
