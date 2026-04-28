@@ -121,15 +121,15 @@ function renderHtmlEmail({ name, company, email, phone, message }) {
 }
 
 async function sendEmail({ name, company, email, phone, message }) {
-  const contactEmail = process.env.CONTACT_EMAIL;
+  const contactEmail = process.env.CONTACT_EMAIL || "info@ofad.uz";
   const resendApiKey = process.env.RESEND_API_KEY;
 
-  if (!contactEmail || !resendApiKey) {
+  if (!resendApiKey) {
     throw new PublicApiError(
       500,
       "CONFIG_MISSING",
       "Server email configuration is missing.",
-      "Missing CONTACT_EMAIL or RESEND_API_KEY environment variables."
+      "Missing RESEND_API_KEY environment variable."
     );
   }
 
