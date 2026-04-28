@@ -1,5 +1,14 @@
 const EMAIL_SUBJECT = "New partnership request from OFAD website";
 
+class PublicApiError extends Error {
+  constructor(status, code, message, details) {
+    super(message);
+    this.status = status;
+    this.code = code;
+    this.details = details;
+  }
+}
+
 function escapeHtml(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -116,7 +125,12 @@ async function sendEmail({ name, company, email, phone, message }) {
   const resendApiKey = process.env.RESEND_API_KEY;
 
   if (!contactEmail || !resendApiKey) {
-    throw new Error("Missing CONTACT_EMAIL or RESEND_API_KEY environment variables.");
+    throw new PublicApiError(
+      500,
+      "CONFIG_MISSING",
+      "Server email configuration is missing.",
+      "Missing CONTACT_EMAIL or RESEND_API_KEY environment variables."
+    );
   }
 
   const html = renderHtmlEmail({ name, company, email, phone, message });
@@ -150,7 +164,47 @@ async function sendEmail({ name, company, email, phone, message }) {
 
   if (!response.ok) {
     const errorText = await response.text();
-    throw new Error(`Resend API error: ${errorText}`);
+    let errorPayload = null;
+
+    try {
+      errorPayload = JSON.parse(errorText);
+    } catch {
+      errorPayload = null;
+    }
+
+    const resendMessage =
+      errorPayload?.message ||
+      errorPayload?.error?.message ||
+      errorText ||
+      "Unknown Resend API error";
+
+    if (response.status === 401) {
+      throw new PublicApiError(
+        500,
+        "RESEND_AUTH_ERROR",
+        "Resend API authentication failed.",
+        resendMessage
+      );
+    }
+
+    if (
+      response.status === 403 &&
+      /(domain is not verified|verify a domain|resend\.dev|verified domain)/i.test(resendMessage)
+    ) {
+      throw new PublicApiError(
+        500,
+        "RESEND_DOMAIN_ERROR",
+        "The sending domain is not verified in Resend.",
+        resendMessage
+      );
+    }
+
+    throw new PublicApiError(
+      502,
+      "RESEND_REQUEST_ERROR",
+      "Resend rejected the email request.",
+      resendMessage
+    );
   }
 }
 
@@ -174,6 +228,7 @@ export default async function handler(req, res) {
     if (!isValid) {
       return res.status(400).json({
         ok: false,
+        code: "VALIDATION_ERROR",
         message: "Validation failed",
         fieldErrors: errors
       });
@@ -183,8 +238,18 @@ export default async function handler(req, res) {
     return res.status(200).json({ ok: true });
   } catch (error) {
     console.error("OFAD contact API error:", error);
+
+    if (error instanceof PublicApiError) {
+      return res.status(error.status).json({
+        ok: false,
+        code: error.code,
+        message: error.message
+      });
+    }
+
     return res.status(500).json({
       ok: false,
+      code: "INTERNAL_ERROR",
       message: "Failed to send message"
     });
   }

@@ -1691,6 +1691,14 @@
           loading: "Отправляем...",
           success: "Спасибо! Ваша заявка отправлена.",
           error: "Ошибка отправки. Попробуйте позже или напишите на info@ofad.uz",
+          errors: {
+            CONFIG_MISSING: "Почтовая конфигурация сервера не настроена. Проверьте RESEND_API_KEY и CONTACT_EMAIL в Vercel.",
+            RESEND_AUTH_ERROR: "Resend отклонил авторизацию. Проверьте RESEND_API_KEY.",
+            RESEND_DOMAIN_ERROR: "Домен отправителя не подтвержден в Resend. Подтвердите домен ofad.uz и адрес отправителя.",
+            RESEND_REQUEST_ERROR: "Resend отклонил отправку. Проверьте настройки домена, sender email и получателя.",
+            INTERNAL_ERROR: "На сервере произошла ошибка отправки. Проверьте логи Vercel.",
+            VALIDATION_ERROR: "Проверьте корректность заполнения полей формы."
+          },
           note: "Заявка отправляется через защищенную форму. Если удобнее, можно написать на info@ofad.uz."
         },
         footer: {
@@ -1839,6 +1847,14 @@
           loading: "Yuborilmoqda...",
           success: "Rahmat! So‘rovingiz yuborildi.",
           error: "Yuborishda xatolik yuz berdi. Keyinroq urinib ko‘ring yoki info@ofad.uz ga yozing",
+          errors: {
+            CONFIG_MISSING: "Server pochta sozlamalari to‘liq emas. Vercel ichida RESEND_API_KEY va CONTACT_EMAIL ni tekshiring.",
+            RESEND_AUTH_ERROR: "Resend avtorizatsiyani rad etdi. RESEND_API_KEY ni tekshiring.",
+            RESEND_DOMAIN_ERROR: "Jo‘natuvchi domen Resend’da tasdiqlanmagan. ofad.uz domeni va sender emailni verify qiling.",
+            RESEND_REQUEST_ERROR: "Resend yuborishni rad etdi. Domen, sender email va qabul qiluvchi manzil sozlamalarini tekshiring.",
+            INTERNAL_ERROR: "Serverda yuborish xatosi yuz berdi. Vercel loglarini tekshiring.",
+            VALIDATION_ERROR: "Forma maydonlarini to‘g‘ri to‘ldiring."
+          },
           note: "So‘rov himoyalangan forma orqali yuboriladi. Istasangiz info@ofad.uz manziliga ham yozishingiz mumkin."
         },
         footer: {
@@ -1860,6 +1876,10 @@
       path.split(".").reduce((acc, key) => acc && acc[key], source);
 
     function setContactFormState(nextState) {
+      setContactFormStateMessage(nextState);
+    }
+
+    function setContactFormStateMessage(nextState, customMessage = "") {
       state.formState = nextState;
 
       if (!contactSubmitButton || !contactFormStatus) return;
@@ -1870,18 +1890,31 @@
 
       contactFormStatus.className = "contact-form-status";
       if (nextState === "success") {
-        contactFormStatus.textContent = t.success;
+        contactFormStatus.textContent = customMessage || t.success;
         contactFormStatus.classList.add("is-success");
         return;
       }
 
       if (nextState === "error") {
-        contactFormStatus.textContent = t.error;
+        contactFormStatus.textContent = customMessage || t.error;
         contactFormStatus.classList.add("is-error");
         return;
       }
 
       contactFormStatus.textContent = "";
+    }
+
+    function resolveContactFormErrorMessage(result = {}) {
+      const t = translations[state.lang].form;
+      if (result && result.code && t.errors && t.errors[result.code]) {
+        return t.errors[result.code];
+      }
+
+      if (typeof result.message === "string" && result.message.trim()) {
+        return result.message;
+      }
+
+      return t.error;
     }
 
     function renderList(targetId, items, renderer) {
@@ -2003,14 +2036,14 @@
 
           const result = await response.json().catch(() => ({}));
           if (!response.ok || !result.ok) {
-            throw new Error(result.message || "Contact request failed");
+            throw result;
           }
 
           contactForm.reset();
           setContactFormState("success");
         } catch (error) {
           console.error(error);
-          setContactFormState("error");
+          setContactFormStateMessage("error", resolveContactFormErrorMessage(error));
         }
       });
     }
