@@ -23,6 +23,7 @@ CONTACT_EMAIL=info@ofad.uz
 
 The `/api/contact` serverless route uses Resend to forward secure partnership requests to `info@ofad.uz`.
 Make sure `info@ofad.uz` (or the `ofad.uz` domain) is verified in Resend before testing production email delivery.
+The email is delivered to `info@ofad.uz`, while the sender is automatically set to `no-reply@ofad.uz` based on your verified domain.
 
 ### Local preview
 

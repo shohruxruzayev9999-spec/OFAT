@@ -133,6 +133,18 @@ async function sendEmail({ name, company, email, phone, message }) {
     );
   }
 
+  const senderDomain = contactEmail.includes("@") ? contactEmail.split("@")[1] : "";
+  if (!senderDomain) {
+    throw new PublicApiError(
+      500,
+      "CONFIG_MISSING",
+      "Server email configuration is invalid.",
+      "CONTACT_EMAIL must be a valid email address."
+    );
+  }
+
+  const senderEmail = `no-reply@${senderDomain}`;
+
   const html = renderHtmlEmail({ name, company, email, phone, message });
   const text = [
     EMAIL_SUBJECT,
@@ -153,7 +165,7 @@ async function sendEmail({ name, company, email, phone, message }) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      from: `OFAD Website <${contactEmail}>`,
+      from: `OFAD Website <${senderEmail}>`,
       to: [contactEmail],
       subject: EMAIL_SUBJECT,
       html,
