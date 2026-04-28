@@ -291,6 +291,12 @@
       cursor: pointer;
     }
 
+    .btn:disabled {
+      cursor: wait;
+      opacity: 0.78;
+      transform: none;
+    }
+
     .btn-primary {
       background: var(--red);
       color: var(--white);
@@ -1060,6 +1066,35 @@
       resize: vertical;
     }
 
+    .field-honeypot {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      clip-path: inset(50%);
+    }
+
+    .contact-form-status {
+      min-height: 24px;
+      margin: -2px 0 0;
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .contact-form-status.is-success {
+      color: #0f7a2b;
+    }
+
+    .contact-form-status.is-error {
+      color: var(--red);
+    }
+
     .form-note {
       margin: 0;
       color: var(--muted);
@@ -1447,8 +1482,8 @@
               <strong>OFAD LLC, Tashkent, Uzbekistan</strong>
             </div>
             <div class="contact-item">
-              <span>Email</span>
-              <a href="mailto:info@ofad.uz">info@ofad.uz</a>
+              <span data-i18n="contact.emailLabel">Email</span>
+              <strong>info@ofad.uz</strong>
             </div>
             <div class="contact-item">
               <span data-i18n="contact.phoneLabel">Телефон</span>
@@ -1457,25 +1492,34 @@
           </div>
         </div>
 
-        <form class="contact-form" action="mailto:info@ofad.uz" method="post" enctype="text/plain">
+        <form class="contact-form" id="contactForm">
           <div class="field">
             <label for="name" data-i18n="form.name">Ваше имя</label>
-            <input id="name" name="name" autocomplete="name" data-i18n-placeholder="form.namePlaceholder" placeholder="Иван Иванов" />
+            <input id="name" name="name" autocomplete="name" data-i18n-placeholder="form.namePlaceholder" placeholder="Иван Иванов" minlength="2" maxlength="120" required />
           </div>
           <div class="field">
             <label for="company" data-i18n="form.company">Компания</label>
-            <input id="company" name="company" autocomplete="organization" data-i18n-placeholder="form.companyPlaceholder" placeholder="Название организации" />
+            <input id="company" name="company" autocomplete="organization" data-i18n-placeholder="form.companyPlaceholder" placeholder="Название организации" maxlength="160" />
           </div>
           <div class="field">
             <label for="email" data-i18n="form.email">Электронная почта</label>
-            <input id="email" type="email" name="email" autocomplete="email" data-i18n-placeholder="form.emailPlaceholder" placeholder="example@mail.com" />
+            <input id="email" type="email" name="email" autocomplete="email" data-i18n-placeholder="form.emailPlaceholder" placeholder="example@mail.com" maxlength="160" required />
+          </div>
+          <div class="field">
+            <label for="phone" data-i18n="form.phone">Телефон</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" data-i18n-placeholder="form.phonePlaceholder" placeholder="+998 XX XXX XX XX" maxlength="60" />
           </div>
           <div class="field">
             <label for="message" data-i18n="form.message">Сообщение</label>
-            <textarea id="message" name="message" data-i18n-placeholder="form.messagePlaceholder" placeholder="Опишите ваши потребности..."></textarea>
+            <textarea id="message" name="message" data-i18n-placeholder="form.messagePlaceholder" placeholder="Опишите ваши потребности..." minlength="10" maxlength="4000" required></textarea>
           </div>
-          <button class="btn btn-primary" type="submit" data-i18n="form.submit">Отправить запрос</button>
-          <p class="form-note" data-i18n="form.note">Форма откроет ваш почтовый клиент. Также можно написать напрямую на info@ofad.uz.</p>
+          <div class="field field-honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <button class="btn btn-primary" id="contactSubmitButton" type="submit" data-i18n="form.submit">Отправить запрос</button>
+          <p class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite"></p>
+          <p class="form-note" data-i18n="form.note">Заявка отправляется через защищенную форму. Если удобнее, можно написать на info@ofad.uz.</p>
         </form>
       </div>
     </section>
@@ -1628,6 +1672,7 @@
           label: "Контакты",
           title: "Обсудим поставки, дилерство или вывод бренда на рынок?",
           copy: "Оставьте заявку для сотрудничества с OFAD. Команда уточнит категорию товара, формат поставки и необходимые документы.",
+          emailLabel: "Email",
           officeLabel: "Офис и склад",
           phoneLabel: "Телефон"
         },
@@ -1638,10 +1683,15 @@
           companyPlaceholder: "Название организации",
           email: "Электронная почта",
           emailPlaceholder: "example@mail.com",
+          phone: "Телефон",
+          phonePlaceholder: "+998 XX XXX XX XX",
           message: "Сообщение",
           messagePlaceholder: "Опишите ваши потребности...",
           submit: "Отправить запрос",
-          note: "Форма откроет ваш почтовый клиент. Также можно написать напрямую на info@ofad.uz."
+          loading: "Отправляем...",
+          success: "Спасибо! Ваша заявка отправлена.",
+          error: "Ошибка отправки. Попробуйте позже или напишите на info@ofad.uz",
+          note: "Заявка отправляется через защищенную форму. Если удобнее, можно написать на info@ofad.uz."
         },
         footer: {
           copy: "One For All Distribution - official import and B2B distribution in Uzbekistan"
@@ -1770,6 +1820,7 @@
           label: "Kontaktlar",
           title: "Yetkazib berish, dilerlik yoki brendni bozorga chiqarishni muhokama qilamizmi?",
           copy: "OFAD bilan hamkorlik uchun ariza qoldiring. Jamoa mahsulot kategoriyasi, yetkazib berish formati va kerakli hujjatlarni aniqlashtiradi.",
+          emailLabel: "Email",
           officeLabel: "Ofis va ombor",
           phoneLabel: "Telefon"
         },
@@ -1780,10 +1831,15 @@
           companyPlaceholder: "Tashkilot nomi",
           email: "Elektron pochta",
           emailPlaceholder: "example@mail.com",
+          phone: "Telefon",
+          phonePlaceholder: "+998 XX XXX XX XX",
           message: "Xabar",
           messagePlaceholder: "Ehtiyojlaringizni yozing...",
           submit: "So‘rov yuborish",
-          note: "Forma pochta klientini ochadi. Shuningdek info@ofad.uz manziliga bevosita yozishingiz mumkin."
+          loading: "Yuborilmoqda...",
+          success: "Rahmat! So‘rovingiz yuborildi.",
+          error: "Yuborishda xatolik yuz berdi. Keyinroq urinib ko‘ring yoki info@ofad.uz ga yozing",
+          note: "So‘rov himoyalangan forma orqali yuboriladi. Istasangiz info@ofad.uz manziliga ham yozishingiz mumkin."
         },
         footer: {
           copy: "One For All Distribution - O‘zbekistonda rasmiy import va B2B distribyutsiya"
@@ -1792,11 +1848,41 @@
     };
 
     const state = {
-      lang: localStorage.getItem("ofad-lang") || "ru"
+      lang: localStorage.getItem("ofad-lang") || "ru",
+      formState: "idle"
     };
+
+    const contactForm = document.getElementById("contactForm");
+    const contactSubmitButton = document.getElementById("contactSubmitButton");
+    const contactFormStatus = document.getElementById("contactFormStatus");
 
     const getValue = (path, source = translations[state.lang]) =>
       path.split(".").reduce((acc, key) => acc && acc[key], source);
+
+    function setContactFormState(nextState) {
+      state.formState = nextState;
+
+      if (!contactSubmitButton || !contactFormStatus) return;
+
+      const t = translations[state.lang].form;
+      contactSubmitButton.textContent = nextState === "loading" ? t.loading : t.submit;
+      contactSubmitButton.disabled = nextState === "loading";
+
+      contactFormStatus.className = "contact-form-status";
+      if (nextState === "success") {
+        contactFormStatus.textContent = t.success;
+        contactFormStatus.classList.add("is-success");
+        return;
+      }
+
+      if (nextState === "error") {
+        contactFormStatus.textContent = t.error;
+        contactFormStatus.classList.add("is-error");
+        return;
+      }
+
+      contactFormStatus.textContent = "";
+    }
 
     function renderList(targetId, items, renderer) {
       const target = document.getElementById(targetId);
@@ -1875,6 +1961,7 @@
       });
 
       renderDynamicSections();
+      setContactFormState(state.formState);
     }
 
     document.querySelectorAll("[data-lang]").forEach((button) => {
@@ -1884,6 +1971,49 @@
         applyTranslations();
       });
     });
+
+    if (contactForm) {
+      contactForm.addEventListener("input", () => {
+        if (state.formState !== "loading") {
+          setContactFormState("idle");
+        }
+      });
+
+      contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!contactForm.reportValidity()) {
+          return;
+        }
+
+        const formData = new FormData(contactForm);
+        const payload = Object.fromEntries(formData.entries());
+
+        setContactFormState("loading");
+
+        try {
+          const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify(payload)
+          });
+
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok || !result.ok) {
+            throw new Error(result.message || "Contact request failed");
+          }
+
+          contactForm.reset();
+          setContactFormState("success");
+        } catch (error) {
+          console.error(error);
+          setContactFormState("error");
+        }
+      });
+    }
 
     applyTranslations();
   </script>
